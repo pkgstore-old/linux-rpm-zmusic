@@ -1,12 +1,14 @@
 %global app                     ZMusic
-%global release_prefix          101
+%global release_prefix          102
 
 Name:                           zmusic
 Version:                        1.1.8
 Release:                        %{release_prefix}%{?dist}
 Summary:                        ZMusic libraries and headers for GZDoom functionality
 License:                        GPLv3
-Url:                            https://zdoom.org
+URL:                            https://zdoom.org
+Vendor:                         Package Store <https://pkgstore.github.io>
+Packager:                       Kitsune Solar <kitsune.solar@gmail.com>
 
 Source0:                        https://github.com/coelckers/ZMusic/archive/%{app}-%{version}.tar.gz
 
@@ -19,7 +21,7 @@ BuildRequires:                  git
 BuildRequires:                  nasm
 BuildRequires:                  glew-devel
 
-# pkgconfig
+# pkgconfig.
 BuildRequires:                  pkgconfig(flac)
 BuildRequires:                  pkgconfig(bzip2)
 BuildRequires:                  pkgconfig(zlib)
@@ -65,7 +67,7 @@ zmusic, typically for gzdoom installations.
 
 
 %build
-# Methodology used from zdoom forums
+# Methodology used from zdoom forums.
 %{__mkdir} build
 cd build
 %cmake  -B builddir \
@@ -95,6 +97,9 @@ cd build
 
 
 %changelog
+* Fri Jun 18 2021 Package Store <kitsune.solar@gmail.com> - 1.1.8-102
+- UPD: Add "Vendor" & "Packager" fields.
+
 * Fri Jun 18 2021 Package Store <kitsune.solar@gmail.com> - 1.1.8-101
 - UPD: New build for latest changes.
 
