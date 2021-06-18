@@ -1,5 +1,5 @@
-%global release_prefix          100
 %global app                     ZMusic
+%global release_prefix          101
 
 Name:                           zmusic
 Version:                        1.1.8
@@ -95,6 +95,9 @@ cd build
 
 
 %changelog
+* Fri Jun 18 2021 Package Store <kitsune.solar@gmail.com> - 1.1.8-101
+- UPD: New build for latest changes.
+
 * Thu Jun 17 2021 Package Store <kitsune.solar@gmail.com> - 1.1.8-100
 - UPD: License.
 
