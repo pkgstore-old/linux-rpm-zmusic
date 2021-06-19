@@ -10,7 +10,7 @@ URL:                            https://zdoom.org
 Vendor:                         Package Store <https://pkgstore.github.io>
 Packager:                       Kitsune Solar <kitsune.solar@gmail.com>
 
-Source0:                        https://github.com/coelckers/ZMusic/archive/%{app}-%{version}.tar.gz
+Source0:                        https://github.com/coelckers/ZMusic/archive/v%{version}.tar.gz#/%{app}-%{version}.tar.gz
 
 BuildRoot:                      %{_tmppath}/%{name}-%{version}-build
 BuildRequires:                  gcc-c++
