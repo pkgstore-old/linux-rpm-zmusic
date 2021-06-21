@@ -8,6 +8,7 @@ GZDoom's music system as a standalone library.
 
 ```
 $ dnf copr enable pkgstore/zmusic
+$ dnf install -y zmusic
 ```
 
 ### Open Build Service (OBS)
