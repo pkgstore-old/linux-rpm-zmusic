@@ -7,7 +7,7 @@ GZDoom's music system as a standalone library.
 ### Fedora COPR
 
 ```
-$ dnf copr enable pkgstore/zmusic
+$ dnf copr enable pkgstore/gzdoom
 $ dnf install -y zmusic
 ```
 
