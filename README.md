@@ -22,3 +22,10 @@ $ dnf install -y zmusic
 ```
 $ dnf upgrade -y zmusic
 ```
+
+## Remove
+
+```
+$ dnf erase -y zmusic
+$ dnf copr remove pkgstore/gzdoom
+```
