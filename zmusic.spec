@@ -1,5 +1,5 @@
 %global app                     ZMusic
-%global release_prefix          102
+%global release_prefix          1000
 
 Name:                           zmusic
 Version:                        1.1.8
@@ -7,10 +7,8 @@ Release:                        %{release_prefix}%{?dist}
 Summary:                        ZMusic libraries and headers for GZDoom functionality
 License:                        GPLv3
 URL:                            https://zdoom.org
-Vendor:                         Package Store <https://pkgstore.github.io>
-Packager:                       Kitsune Solar <kitsune.solar@gmail.com>
 
-Source0:                        https://github.com/coelckers/ZMusic/archive/v%{version}.tar.gz#/%{app}-%{version}.tar.gz
+Source0:                        %{app}-%{version}.tar.xz
 
 BuildRoot:                      %{_tmppath}/%{name}-%{version}-build
 BuildRequires:                  gcc-c++
@@ -52,7 +50,7 @@ function.
 
 %package devel
 Summary:                        ZMusic development headers
-Requires:                       zmusic = %{version}-%{release}
+Requires:                       %{name} = %{version}-%{release}
 
 %description devel
 This package contains the development headers required for building against
@@ -70,10 +68,11 @@ zmusic, typically for gzdoom installations.
 # Methodology used from zdoom forums.
 %{__mkdir} build
 cd build
-%cmake  -B builddir \
-        -DCMAKE_BUILD_TYPE=Release \
-        -DCMAKE_INSTALL_PREFIX=%{_prefix} \
-        -DCMAKE_INSTALL_LIBDIR=%{_lib} ..
+%{cmake}                            \
+  -B builddir                       \
+  -DCMAKE_BUILD_TYPE=Release        \
+  -DCMAKE_INSTALL_PREFIX=%{_prefix} \
+  -DCMAKE_INSTALL_LIBDIR=%{_lib} ..
 
 %{make_build} %{?_smp_mflags} -C builddir
 
@@ -97,6 +96,10 @@ cd build
 
 
 %changelog
+* Fri Apr 01 2022 Package Store <pkgstore@mail.ru> - 1.1.8-1000
+- UPD: Rebuild by Package Store.
+- UPD: File "zmusic.spec".
+
 * Fri Jun 18 2021 Package Store <kitsune.solar@gmail.com> - 1.1.8-102
 - UPD: Add "Vendor" & "Packager" fields.
 
